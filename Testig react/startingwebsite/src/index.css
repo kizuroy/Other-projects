@@ -1,0 +1,22 @@
+header {
+  background-color: #f2f2f2; /* Soft background color */
+  color: #333; /* Darker text color */
+  padding: 20px; /* Padding around the header */
+  text-align: center; /* Center-align the text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+}
+
+h1 {
+  font-size: 2.5rem; /* Header text size */
+  margin: 0; /* Remove default margin */
+  letter-spacing: 1px; /* Slight letter spacing */
+  font-family: 'Arial', sans-serif; /* Custom font */
+  color: #555; /* Slightly darker text color for the heading */
+}
+
+/* Add a hover effect for interactive feel */
+header:hover {
+  background-color: #e0e0e0; /* Lighter background on hover */
+  transition: background-color 0.3s ease;
+}

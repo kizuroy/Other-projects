@@ -1,0 +1,23 @@
+
+.weather-widget {
+    width: 150px; /* Set a fixed width for a smaller widget */
+  height: 150px; /* Set a fixed height to make it square */
+  background-color: #f2f2f2; /* Soft background color */
+  padding: 10px; /* Reduce padding for a smaller widget */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Adjust the border-radius for a square shape */
+}
+
+.weather-widget p {
+    font-size: 1rem; /* Adjust text size for the smaller widget */
+  margin: 0; /* Remove default margin */
+  font-family: 'Arial', sans-serif; /* Custom font */
+  color: #555; /* Slightly darker text color */
+}
+
+/* Add a hover effect for interactivity */
+.weather-widget:hover {
+    background-color: #e0e0e0; /* Lighter background on hover */
+  transition: background-color 0.3s ease;
+}
