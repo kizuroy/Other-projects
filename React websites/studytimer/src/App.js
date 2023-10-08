@@ -1,15 +1,13 @@
 import React from 'react';
-import './App.css'; // You can import your global app styles here if needed
-import Timer from './Timer/Timer'; // Import the Timer component
+import './App.css';
+import Header from './Header';
+import Timer from "./Timer/Timer";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Study Timer App</h1>
-        <button>Login</button>
-      </header>
-      <Timer /> {/* Add the Timer component here */}
+      <Header />
+      <Timer></Timer>
     </div>
     );
 }

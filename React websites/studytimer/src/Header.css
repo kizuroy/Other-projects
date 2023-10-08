@@ -1,0 +1,36 @@
+/* Header.css */
+
+.app-header {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.site-name {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-button,
+.register-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #33b5e5; /* Light Blue for buttons */
+  color: #fff;
+  font-size: 1rem;
+}
+
+.login-button:hover,
+.register-button:hover {
+    background-color: #1f7ecf; /* Slightly darker blue on hover */
+}
