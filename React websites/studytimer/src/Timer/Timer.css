@@ -1,38 +1,68 @@
+/* Timer.css */
+
 .timer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
 }
 
 .timer {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin: 20px 0;
+    color: #555;
+}
+
+.timer.session {
+    color: #33b5e5; /* Light Blue for Study Session */
+}
+
+.timer.break {
+    color: #ff6f61; /* Coral for Break Session */
+}
+
+.controls button {
     padding: 10px 20px;
-    border: 2px solid #333;
-    border-radius: 8px;
-    background-color: #f2f2f2;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-}
-
-.timer.active {
-    background-color: #4caf50; /* Green background when active */
-  color: white;
-}
-
-.button-container button {
     font-size: 1rem;
-    padding: 8px 16px;
     margin: 5px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    background-color: #33b5e5; /* Light Blue for buttons */
+  color: #fff;
 }
 
-.button-container button:hover {
-    background-color: #333;
-    color: white;
+.controls button:hover {
+    background-color: #1f7ecf; /* Slightly darker blue on hover */
 }
 
-.button-container button:active {
-    transform: scale(0.95);
+.settings {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.completed-sessions {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
 }
