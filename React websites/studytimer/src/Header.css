@@ -1,4 +1,4 @@
-/* Header.css */
+/* Header.css or MusicPlayer.css */
 
 .app-header {
     background-color: #f4f4f4;
@@ -19,18 +19,21 @@
     gap: 10px;
 }
 
+.music-button,
 .login-button,
 .register-button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #33b5e5; /* Light Blue for buttons */
-  color: #fff;
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
-.login-button:hover,
-.register-button:hover {
+.music-button {
+    background-color: #33b5e5; /* Light Blue for music button */
+  color: #fff;
+}
+
+.music-button:hover {
     background-color: #1f7ecf; /* Slightly darker blue on hover */
 }
