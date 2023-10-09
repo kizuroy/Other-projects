@@ -37,7 +37,7 @@ function Header() {
                     </>
                     ) : (
                         <button className="music-button" onClick={playMusic}>
-                            Play
+                            Play Music
                         </button>
                         )}
                 <button className="login-button">Log In</button>

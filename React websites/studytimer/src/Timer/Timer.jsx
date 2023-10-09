@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Timer.css'; // Import your CSS file
+import './Timer.css';
 
 function Timer() {
     const [sessionLength, setSessionLength] = useState(25);
@@ -70,44 +70,52 @@ function Timer() {
 
     return (
         <div className="timer-container">
-            <h1>Timer</h1>
+            <h1 className="timer-title">Pomodoro Timer</h1>
             <div className={`timer ${isSessionActive ? 'session' : 'break'}`}>
                 {isSessionActive ? 'Study Time' : 'Break Time'}: {formatTime(timeLeft)}
             </div>
             <div className="controls">
-                <button onClick={toggleTimer}>
+                <button className={`control-button ${timerActive ? 'pause-button' : 'start-button'}`} onClick={toggleTimer}>
                     {timerActive ? 'Pause' : 'Start'}
                 </button>
-                <button onClick={resetTimer}>Reset</button>
-                <button onClick={toggleSettings}>Settings</button>
+                <button className="control-button reset-button" onClick={resetTimer}>
+                    Reset
+                </button>
+                <button className="control-button settings-button" onClick={toggleSettings}>
+                    Settings
+                </button>
             </div>
             {showSettings && (
                 <div className="settings">
-                    <label>Session Length (minutes):</label>
+                    <label className="setting-label">Session Length (minutes):</label>
                     <input
                         type="number"
                         min="1"
+                        className="setting-input"
                         value={sessionLength}
                         onChange={(e) => setSessionLength(e.target.value)}
                     />
-                    <label>Break Length (minutes):</label>
+                    <label className="setting-label">Break Length (minutes):</label>
                     <input
                         type="number"
                         min="1"
+                        className="setting-input"
                         value={breakLength}
                         onChange={(e) => setBreakLength(e.target.value)}
                     />
-                    <label>Long Break Length (minutes):</label>
+                    <label className="setting-label">Long Break Length (minutes):</label>
                     <input
                         type="number"
                         min="1"
+                        className="setting-input"
                         value={longBreakLength}
                         onChange={(e) => setLongBreakLength(e.target.value)}
                     />
-                    <label>Sessions Before Long Break:</label>
+                    <label className="setting-label">Sessions Before Long Break:</label>
                     <input
                         type="number"
                         min="1"
+                        className="setting-input"
                         value={sessionsBeforeLongBreak}
                         onChange={(e) => setSessionsBeforeLongBreak(e.target.value)}
                     />
@@ -121,3 +129,4 @@ function Timer() {
 }
 
 export default Timer;
+
