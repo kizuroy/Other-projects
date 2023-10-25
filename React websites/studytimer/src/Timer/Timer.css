@@ -1,11 +1,9 @@
-/* Timer.css */
-
 .timer-container {
     text-align: center;
     padding: 20px;
     width: 350px;
     background-color: #f8f8f8;
-    border-radius: 10%; /* Make it round */
+    border-radius: 10%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -21,11 +19,11 @@ h1 {
 }
 
 .timer.session {
-    color: #33b5e5; /* Light Blue for Study Session */
+    color: #33b5e5; 
 }
 
 .timer.break {
-    color: #ff6f61; /* Coral for Break Session */
+    color: #ff6f61; 
 }
 
 .controls button {
@@ -35,12 +33,12 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #33b5e5; /* Light Blue for buttons */
+    background-color: #33b5e5; 
   color: #fff;
 }
 
 .controls button:hover {
-    background-color: #1f7ecf; /* Slightly darker blue on hover */
+    background-color: #1f7ecf; 
 }
 
 .settings {
