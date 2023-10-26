@@ -1,0 +1,13 @@
+/* app.css */
+.App {
+    display: flex; /* Use flex layout to position components */
+    justify-content: flex-start; /* Align components from left to right */
+    align-items: flex-start; /* Align components from top to bottom */
+    height: 100vh; /* Make the app fill the full viewport height */
+    padding: 20px; /* Add some padding for spacing */
+    background-color: #f0f0f0; /* Set the background color of the app */
+    font-family: Arial, sans-serif; /* Choose a font for the entire app */
+  }
+  
+  /* You can add more styles as needed for your specific app layout and design. */
+  

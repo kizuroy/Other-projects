@@ -1,0 +1,45 @@
+/* RightSidebar.css */
+.sidebar-main {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: #f7f7f7; /* Slightly different from white */
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    padding: 16px;
+
+  }
+  
+  .sidebar-main.show {
+    transform: translateX(0);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  li:hover {
+    background-color: #e0e0e0; /* Slight background color change on hover */
+  }
+  
+  .Logo {
+    border-bottom: 1px solid #333; /* Add a slight underline to the logo */
+    padding-bottom: 16px; /* Add some space between the logo and choices */
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Text color for the logo */
+  }
+  
