@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './createNewBook.css';
 
 function CreateNewBook({ createNewBook }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,7 +15,7 @@ function CreateNewBook({ createNewBook }) {
     return (
         <div>
             <div className="Button" onClick={() => setIsModalOpen(true)}>
-                <p>+</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" width="40" height="40"/>
             </div>
 
             {isModalOpen && (

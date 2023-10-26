@@ -1,10 +1,10 @@
-/* createNewBook.css */
 .Button {
-  background-color: #007BFF;
+  background-color: white;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.2s;
@@ -12,10 +12,6 @@
 
 .Button p {
   margin: 0;
-}
-
-.Button:hover {
-  background-color: #0056b3;
 }
 
 .modal {
