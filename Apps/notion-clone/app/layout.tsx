@@ -1,25 +1,27 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { ThemeProvider } from '@/components/providers/theme-provider'
-import { ConvexClientProvider } from '@/components/providers/convex-provider'
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { ThemeProvider } from "@/components/providers/theme-provider"
+import { ConvexClientProvider } from "@/components/providers/convex-provider"
+import { Toaster } from "sonner"
 
-const inter = Inter({ subsets: ['latin'] })
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'Better notes',
-  description: 'Notes for students.',
+  title: "Better notes",
+  description: "Notes for students.",
   icons: {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: '/logo.svg',
-        href: '/logo.svg',
+        url: "/logo.svg",
+        href: "/logo.svg",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: '/logo-dark.svg',
-        href: '/logo-dark.svg',
+        url: "/logo-dark.svg",
+        href: "/logo-dark.svg",
       }
     ]
   }
@@ -36,12 +38,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <ConvexClientProvider>
           <ThemeProvider 
-              attribute='class'
-              defaultTheme='system'
+              attribute="class"
+              defaultTheme="system"
               enableSystem
               disableTransitionOnChange
-              storageKey='site-theme-2'
+              storageKey="site-theme-2"
           >
+            <Toaster position="bottom-center" />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>

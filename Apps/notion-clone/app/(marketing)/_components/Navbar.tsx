@@ -7,9 +7,10 @@ import Logo from "./Logo";
 import { ModeToggle } from "@/components/mode-toggle";
 
 import { useConvexAuth } from "convex/react";
-import { SignInButton } from "@clerk/clerk-react";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
+import Link from "next/link";
 
 export const Navbar = () => {
     const scrolled = useScrollTop();
@@ -37,6 +38,13 @@ export const Navbar = () => {
                             Sing in free
                         </Button>
                     </SignInButton>
+                    </>
+                )}
+                {isAuthenticated && !isLoading &&(
+                    <>
+                        <UserButton 
+                                afterSignOutUrl="/"
+                        />
                     </>
                 )}
                 <ModeToggle />
