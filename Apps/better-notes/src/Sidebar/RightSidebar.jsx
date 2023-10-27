@@ -2,6 +2,7 @@ import React from 'react';
 import './RightSidebar.css';
 
 function RightSidebar({ books }) {
+
   return (
     <div className='sidebar-main'>
       <div className='Logo'>
@@ -19,7 +20,6 @@ function RightSidebar({ books }) {
       {books.map((book) => (
             <li 
                 key={book.id}
-
             >
               {book.title}
 
