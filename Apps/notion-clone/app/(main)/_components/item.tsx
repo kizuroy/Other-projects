@@ -1,9 +1,29 @@
 "use client";
 
+import {    DropdownMenu, 
+            DropdownMenuTrigger,
+            DropdownMenuItem, 
+            DropdownMenuContent,
+            DropdownMenuSeparator 
+        } from "@/components/ui/dropdown-menu";
+
 import { Skeleton } from "@/components/ui/skeleton";
+import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronRight, LucideIcon } from "lucide-react";
+import { useUser } from "@clerk/clerk-react";
+import { useMutation } from "convex/react";
+
+import {    ChevronDown, 
+            ChevronRight, 
+            LucideIcon, 
+            MoreHorizontal, 
+            Plus, 
+            Trash
+        } from "lucide-react";
+
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 interface ItemProps {
     id?: Id<"documents">
@@ -31,10 +51,33 @@ export const Item =({
     expanded,
 
 }: ItemProps) => {
+    
+    const { user } = useUser();
+    const rounter = useRouter();
+    const create = useMutation(api.documents.create);
+
     const handleExpand = ( event : React.MouseEvent<HTMLDivElement, MouseEvent> ) => {
         event.stopPropagation();
         onExpand?.();
-    }
+    };
+
+    const onCreate = (
+        event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            event.stopPropagation();
+            if (!id) return;
+            const promise = create({ title: "Untitled", parentDocument: id }).then((documentId) => {
+                if (!expanded) {
+                    onExpand?.();
+                }
+                // rounter.push(`/documents/${documentId}`);
+            });
+
+            toast.promise(promise, {
+                loading: "Creating a new note...",
+                error: "Note failed to create.",
+                success: "New note created!"
+            })
+        }
 
     const ChevronIcon = expanded ? ChevronDown : ChevronRight;
 
@@ -77,7 +120,47 @@ export const Item =({
                     <span className="text-xs">⌘</span> K
                 </kbd>
             )}
-            
+            { !!id && (
+                <div className="ml-auto flex items-center gap-x-2">
+                    <DropdownMenu>
+                        <DropdownMenuTrigger
+                            asChild
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div
+                                role="button"
+                                className="opacity-0 group-hover:opacity-100 h-full ml-auto rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600"
+                            >
+                                <MoreHorizontal className="h-4 w-4 text-muted-foreground"/>
+                            </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent
+                            className="w-60"
+                            align="start"
+                            side="right"
+                            forceMount
+                        >
+                            <DropdownMenuItem 
+                                className="hover:bg-neutral-300 cursor-pointer"
+                                onClick={() => {}}>
+                                <Trash className="h-4 w-4 mr-2"/>
+                                Delete
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                            <div className="text-sm text-muted-foreground p-2">
+                                Last edited by: { user?.fullName }
+                            </div>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                    <div 
+                        role="button"
+                        onClick={onCreate}
+                        className="opacity-0 group-hover:opacity-100 h-full ml-auto rounded-sm hover:bg-neutral-300 dark:bg-neutral-600">
+                        <Plus className="h-4 w-4 text-muted-foreground"/>
+                    </div>   
+                </div>
+
+            )}
         </div>
     )
 }
