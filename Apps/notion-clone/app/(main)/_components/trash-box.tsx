@@ -12,6 +12,8 @@ import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 
+import { confirmModal } from "@/components/providers/modals/confirm-modal";
+
 export const TrashBox = () => {
     const router  = useRouter();
     const params = useParams();
@@ -99,12 +101,14 @@ export const TrashBox = () => {
                             >
                                 <Undo className="h-3 w-3 text-muted-foreground"/>
                             </div>
+                            <confirmModal>
                             <div
                                 role="button"
                                 className=" rounded-sm p-2 hover:bg-neutral-200"
                             >
                                 <Trash className="h-3 w-3 text-muted-foreground"/>
                             </div>
+                            </confirmModal>
                         </div>
                     </div>
                 ))}
