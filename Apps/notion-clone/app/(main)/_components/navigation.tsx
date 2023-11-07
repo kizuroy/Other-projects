@@ -9,6 +9,7 @@ import {
     Search, 
     Settings,
     Trash} from "lucide-react";
+
  import{
     Popover,
     PopoverTrigger,
@@ -25,10 +26,12 @@ import { Item } from "./item";
 import { toast } from "sonner";
 import { DocumentList } from "./document-list";
 import { TrashBox } from "./trash-box";
+import { useSearch } from "@/hooks/use-search";
 
 
 // Define the Navigation component
 export const Navigation = () => {
+    const search = useSearch();
     // Check if the screen width is less than 768px
     const isMobile = useMediaQuery("(max-width: 768px)");
     const create = useMutation(api.documents.create);
@@ -161,7 +164,7 @@ export const Navigation = () => {
                         label="Search"
                         icon={Search}
                         isSearch
-                        onClick={() => {}}
+                        onClick={search.onOpen}
                     />
                     <Item 
                         label="Settings"
