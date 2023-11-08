@@ -1,7 +1,7 @@
 export default{
     providers: [
         {
-            domain: "",
+            domain: "https://festive-ermine-313.convex.cloud",
             applicationID: "convex",
         },
     ]
